@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false}))
 
 // CONTROLLERS
 app.use('/home', controllers.posts)
+app.use('/comments', controllers.comments)
 
 
 app.get('/', (request, response) => response.send('Welcome to Foodapp'))
