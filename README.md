@@ -37,10 +37,6 @@ Users have the opportunity to like, comment, and also add their recipes to post.
 
 
 
-
-
-
-
 ### Built With
 
 * [Bootstrap]
@@ -57,9 +53,8 @@ Below are instructions on installing and setting up our app.
    ```
 
 
-
-
-
+<!-- LICENSE -->
+## License
 
 <!-- CONTACT -->
 ## Contact
@@ -69,3 +64,13 @@ Below are instructions on installing and setting up our app.
 
 
 Project Link: [https://github.com/pepermz/Project2-Earth-FoodWebsite.git](https://github.com/pepermz/Project2-Earth-FoodWebsite.git)
+
+
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+
+
