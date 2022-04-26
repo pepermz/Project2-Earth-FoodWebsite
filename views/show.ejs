@@ -11,5 +11,24 @@
     <div>
         <a href="/home/<%= onePost._id %>/edit">Edit <%= onePost.name %></a>
     </div>
+    <h1>Comment Show</h1>
+    <section>
+        <div>
+            <h3>Create a Comment:</h3>
+            <!-- form here -->
+            <form method="POST" action="/comments">
+                <input name="rating" type="number"/>
+                <input name="content" type="text" />
+                <input type="hidden" name="product" value="<%=oneProduct.id%>"/>
+                <input type="submit" value="Share your thoughts..."/>
+            </form>
+        </div>
+        <% for(let i=0;i<comments.length;i++){ %>
+            <div>
+                <h3>Rating: <%=comments[i].rating %></h3>
+                <p><%=comments[i].content %></p>
+            </div>
+        <%}%>
+    </section>
 </body>
 </html>
