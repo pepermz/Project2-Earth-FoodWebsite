@@ -26,7 +26,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 FoodApp is a user friendly application providing the best BBQ recipes, restuarants, and user post. 
-Users have the opportunity to like, comment, and also add their recipes to post.  
+Users have the opportunity to like, comment, and add their own BBQ recipes.  
 
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
