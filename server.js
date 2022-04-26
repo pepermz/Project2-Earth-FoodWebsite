@@ -1,6 +1,6 @@
 const express = require('express')
 const methodOverride = require('method-override')
-// const controllers = require('./controllers')
+const controllers = require('./controllers')
 const app = express();
 const PORT = 4000;
 
@@ -16,7 +16,7 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false}))
 
 // CONTROLLERS
-app.use('/home', controllers.home)
+app.use('/home', controllers.posts)
 
 
 app.get('/', (request, response) => response.send('Welcome to Foodapp'))
