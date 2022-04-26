@@ -40,6 +40,23 @@ router.get('/:id/', async (req, res, next) => {
     }
 })
 
+//EDIT ROUTE
+router.get('/:id/edit', async (req,res, next)=>{
+    try {
+        const updatedPost = await db.Post.findById(req.params.id);
+        console.log(updatedPost);
+        const context = {
+            post: updatedPost
+        }
+        return res.render('edit.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+
 
 
 // POST ROUTE
@@ -62,6 +79,19 @@ router.put('/:id', async (req, res, next)=>{
         const updatedPost = await db.Post.findByIdAndUpdate(req.params.id, req.body);
         console.log(updatedPost);
         return res.redirect(`/home`)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+// DELETE ROUTE
+router.delete('/:id', async (req,res, next)=>{
+    try {
+        const deletedPost = await db.Post.findByIdAndDelete(req.params.id);
+        console.log(deletedPost);
+        return res.redirect('/home')
     } catch (error) {
         console.log(error);
         req.error = error;
