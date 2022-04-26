@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New Product</h1>
+    <form method="POST" action="/home">
+        <!-- method => POST - attach the data to post body rather than in the url query string(GET request) -->
+        <!-- action => destination for the post req -->
+        <div>
+            <label for="name"> Product Name: </label>
+            <input id="name" name="name" type="text" />
+        </div>
+        <div>
+            <label for="description"> Product Description: </label>
+            <input id="description" name="description" type="text" />
+        </div>
+        <div>
+            <label for="image"> Product Image(url): </label>
+            <input id="image" name="image" type="text" />
+        </div>
+        <input type="submit" value="Create new product">
+    </form>
+</body>
+</html>
