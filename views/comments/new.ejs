@@ -15,5 +15,13 @@
         <button type="Submit" value="Create Comment" class="btn btn-primary btn-lg">Submit</button>
     </div>
     </form>
+    <label>
+        Related Product
+        <select name="product">
+            <% for (let i = 0;i<post.length;i++){%>
+                <option value="<%=post[i]._id%>"><%=post[i].name%> </option>
+            <%}%>
+        </select>
+    </label><br/>
      
 </html>
