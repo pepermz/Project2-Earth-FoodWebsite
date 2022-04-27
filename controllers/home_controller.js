@@ -24,11 +24,12 @@ router.get('/new', (req, res) => {
 
 
 // localhost:4000/home/:id
-router.get('/:id/', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try {
         const foundPost = await db.Post.findById(req.params.id)
-        const allComments = await db.Comment.find({post:req.params.id})
-        console.log(foundPost);
+        const allComments = await db.Comment.find({product:req.params.id})
+        console.log(allComments[0])
+        // console.log(foundPost);
         const context = { 
             onePost: foundPost,
             comments: allComments,
