@@ -91,8 +91,8 @@ router.put('/:id', async (req, res, next)=>{
 // DELETE ROUTE
 router.delete('/:id', async (req,res, next)=>{
     try {
-        const deletedPost = await db.Post.findByIdAndDelete(req.params.id);
-        console.log(deletedPost);
+        await db.Post.findByIdAndDelete(req.params.id);
+        await db.Comment.findByIdAndDelete({product: req.params.id})
         return res.redirect('/home')
     } catch (error) {
         console.log(error);

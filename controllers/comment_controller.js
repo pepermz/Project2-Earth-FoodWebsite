@@ -36,10 +36,8 @@ router.get('/new', async (req,res, next)=>{
 router.post('/', async (req,res, next)=>{
     try{
         const newCommentData = req.body
-        const newComment = await db.Comment.create(newCommentData)
-        console.log(newComment)
-        // res.redirect('/reviews')
-        res.redirect(`/home/${newComment.post}`)
+        await db.Comment.create(newCommentData)
+        res.redirect(`/home/${newCommentData.product}`)
         // return user to product detail page -> 
     }catch(error){
         console.log(error);
@@ -51,8 +49,8 @@ router.post('/', async (req,res, next)=>{
 // SHOW
 router.get('/:commentId', async (req, res, next) => {
     try {
-        const foundComment = await db.Comment.findById(req.params.reviewId).populate('post')
-        res.render('comments/show.ejs', {comment: foundComment})
+        const foundComment = await db.Comment.findById(req.params.commentId).populate('post')
+        res.render('/show.ejs', {comment: foundComment})
     }catch(error){
         console.log(error);
         req.error = error;
@@ -62,21 +60,21 @@ router.get('/:commentId', async (req, res, next) => {
 
 //PUT 
 router.put('/:commentId', async (req,res, next)=>{
-    res.send('comment update: '+req.params.reviewId)
+    res.send('comment update: '+req.params.commentId)
 })
 
 // edit - GET - serve an edit.ejs
 router.get('/:commentId/edit', async (req,res, next)=>{
-    res.send('hitting review edit: '+req.params.reviewId)
+    res.send('hitting review edit: '+req.params.commentId)
 })
 
 //DELETE
 router.delete('/:commentId', async (req,res, next)=>{
     // res.send('hitting review delete: '+req.params.reviewId)
     try{
-       const deleteComment = await db.Comment.findByIdAndDelete(req.params.reviewId)
-       console.log(deleteComment.id, "<<comment |",deleteComment.post,"<<post") 
-       res.redirect('/home/'+deleteComment.post)
+       const deleteComment = await db.Comment.findByIdAndDelete(req.params.commentId)
+    //    console.log(deleteComment.id, "<<comment |",deleteComment.post,"<<post") 
+       res.redirect(`/home/${deleteComment.product}`)
     }catch(error){
         console.log(error);
         req.error = error;
