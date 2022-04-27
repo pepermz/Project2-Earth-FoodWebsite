@@ -9,5 +9,11 @@
 <body>
     <p>Product: <%=comment.post.name%></p>
     <a href="/home/<%=comments.post._id%>">Find more information about  <%=comment.post.name%></a>
+    <form method="POST" action="/comments">
+        <input name="rating" type="number"/>
+        <input name="content" type="text" />
+        <input type="hidden" name="product" value="<%=onePost.id%>"/>
+        <input type="submit" value="Share your thoughts..."/>
+    </form>
 </body>
 </html>
