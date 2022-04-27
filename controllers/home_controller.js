@@ -27,9 +27,11 @@ router.get('/new', (req, res) => {
 router.get('/:id/', async (req, res, next) => {
     try {
         const foundPost = await db.Post.findById(req.params.id)
+        const allComments = await db.Comment.find({post:req.params.id})
         console.log(foundPost);
         const context = { 
             onePost: foundPost,
+            comments: allComments,
             message: "Hello there"
         }
         return res.render('show.ejs', context)
