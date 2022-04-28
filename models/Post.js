@@ -12,6 +12,10 @@ const postSchema = new mongoose.Schema({
     image: {
         type: String,
         required: [true, 'image cannot be empty']
+    },
+    source: {
+        type: String,
+        default: 'http://localhost:4000/home'   
     }
 }, 
     {

@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo')
 
 const app = express();
 const PORT = 4000;
+const axios = require("axios");
 
 //DB Connection
 require('./config/db.connection')
@@ -41,7 +42,7 @@ app.use('/', controllers.auth)
 
 app.get('/', (request, response) => response.send('Welcome to Foodapp'))
 
-
+const db = require('./models')
 
 
 
@@ -50,3 +51,8 @@ app.get('/', (request, response) => response.send('Welcome to Foodapp'))
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)
 })
+
+
+
+
+  
