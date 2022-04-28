@@ -62,7 +62,7 @@ router.get('/populate', (req,res) => {
             //grabbing display name and image
             if (typeof recipe.display.displayName !== 'undefined'){
                 //body = defined by post.js/schema
-            const body = { name: recipe.display.displayName, description: recipe.display.displayName, image: recipe.display.images[0] }
+            const body = { name: recipe.display.displayName, description: recipe.display.displayName, image: recipe.display.images[0], source: recipe.display.source.sourceUrl}
             db.Post.create(body);
             }
         }
