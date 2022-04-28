@@ -36,8 +36,9 @@ router.get('/new', async (req,res, next)=>{
 router.post('/', async (req,res, next)=>{
     try{
         const newCommentData = req.body
-        await db.Comment.create(newCommentData)
-        res.redirect(`/home/${newCommentData.product}`)
+        const createComment = await db.Comment.create(newCommentData)
+        console.log(createComment)
+        res.redirect(`/home/${createComment.product}`)
         // return user to product detail page -> 
     }catch(error){
         console.log(error);
