@@ -8,6 +8,7 @@
     <h2><%= onePost.name %></h2>
     <small><%= onePost.description %></small>
     <img class="show-image" src="<%=onePost.image%>" alt="<%=onePost.name %>"/>
+    <a href="<%=onePost.source%>">Click here for recipe</a>
     <div>
         <a href="/home/<%= onePost._id %>/edit">Edit <%= onePost.name %></a>
     </div>

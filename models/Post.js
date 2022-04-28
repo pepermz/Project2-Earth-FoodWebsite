@@ -15,7 +15,7 @@ const postSchema = new mongoose.Schema({
     },
     source: {
         type: String,
-        required: [false, 'Link to recipe']    
+        default: 'http://localhost:4000/home'   
     }
 }, 
     {
