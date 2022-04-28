@@ -59,10 +59,12 @@ router.get('/populate', (req,res) => {
         const recipes = response.data.feed;
         for(let idx=0; idx < recipes.length; idx++){
             const recipe = recipes[idx]
+            const source = recipe.display.source['sourceRecipeUrl'] 
+            console.log(source)
             //grabbing display name and image
             if (typeof recipe.display.displayName !== 'undefined'){
                 //body = defined by post.js/schema
-            const body = { name: recipe.display.displayName, description: recipe.display.displayName, image: recipe.display.images[0], source: recipe.display.source.sourceRecipeUrl}
+            const body = { name: recipe.display.displayName, description: recipe.display.displayName, image: recipe.display.images[0], source}
             db.Post.create(body);
             }
         }
