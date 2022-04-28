@@ -13,7 +13,7 @@
                     <div class="card" style="width: 15rem;">
                         <img src="<%= post.image %>" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <p class="card-text">$<%= post.description %></p>
+                          <p class="card-text"><%= post.description %></p>
                           <h3><a href="/home/<%= post._id %>"><%= post.name %></a></h3>
                           <form method="POST" action="/home/<%= post._id %>?_method=DELETE">            <!-- "/products/0?_method=DELETE" -->
                             <input type="submit" class=" btn-danger" value="Delete Product"/>
@@ -21,6 +21,19 @@
                         </div>
                       </div>
                 <% } %>
+                <!-- trying to display directly fom API- can't comment/go to show page -->
+                <!-- <% for(let idx=0; idx < recipes.length; idx++){ %>
+                    <% const recipe=recipes[idx] %>
+                    <% if (typeof recipe.display.source !== 'undefined'){ %>
+                    <div class="card" style="width: 15rem;">
+                        <img src="<%= recipe.display.images[0] %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text"><%= recipe.display.displayName %></p>
+                          <h3><a href=<%- recipe.display.source.sourceRecipeUrl%><%= recipe.display.displayName %></a></h3>
+                        </div>
+                      </div>
+                    <% } %> 
+                <% } %> -->
             </div>
         </div>
       

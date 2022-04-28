@@ -1,14 +1,27 @@
+const { default: axios } = require('axios');
 const express = require('express')
 const router = express.Router()
 const db = require('../models')
-
+const options = {
+    method: 'GET',
+    url: 'https://yummly2.p.rapidapi.com/feeds/list',
+    params: {limit: '24', start: '0'},
+    headers: {
+      'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
+      'X-RapidAPI-Key': 'c6033753cfmsh7b8d0b8ce2f702cp17feaajsn8d2efb4d4847'
+    }
+  };
 
 //  localhost:4000/home 
 router.get('/', async (req, res, next) => {
     try {
         const posts = await db.Post.find({});
-        const context = { posts }
+        const response = await axios.request(options)
+        const recipes = response.data.feed
+        const context = { posts, recipes }
         console.log(posts);
+        console.log('this will never work')
+        console.log(recipes)
         return res.render('index.ejs', context);
     } catch (error) {
         console.log(error);
@@ -21,7 +34,43 @@ router.get('/', async (req, res, next) => {
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
-
+//route to populate cards
+router.get('/populate', (req,res) => {
+    //*****his will delete all cards's API if uncommented*****
+    // const posts = await db.Post.find({});
+    // for(let idx=0; idx < posts.length; idx++){
+    //     const post = posts[idx]
+    // await db.Post.findByIdAndDelete(post._id);
+    // await db.Comment.findByIdAndDelete(post._id)
+    // }
+    //from Yummly's- code snippet to acquire their api database 
+    const options = {
+        method: 'GET',
+        url: 'https://yummly2.p.rapidapi.com/feeds/list',
+        params: {limit: '24', start: '0'},
+        headers: {
+          'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
+          'X-RapidAPI-Key': 'c6033753cfmsh7b8d0b8ce2f702cp17feaajsn8d2efb4d4847'
+        }
+      };
+      //looping through list to create recipe feed
+      axios.request(options).then(function (response) {
+        const recipes = response.data.feed;
+        for(let idx=0; idx < recipes.length; idx++){
+            const recipe = recipes[idx]
+            //grabbing display name and image
+            if (typeof recipe.display.displayName !== 'undefined'){
+                //body = defined by post.js/schema
+            const body = { name: recipe.display.displayName, description: recipe.display.displayName, image: recipe.display.images[0] }
+            db.Post.create(body);
+            }
+        }
+    }).catch(function (error) {
+        console.error(error);
+    });  
+    //redirecting to home
+    res.redirect('/home');  
+})
 
 // localhost:4000/home/:id
 router.get('/:id/', async (req, res, next) => {
