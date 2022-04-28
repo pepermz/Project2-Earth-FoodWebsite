@@ -44,6 +44,7 @@ router.get('/populate', (req,res) => {
     // await db.Comment.findByIdAndDelete(post._id)
     // }
     //from Yummly's- code snippet to acquire their api database 
+    //https://rapidapi.com/apidojo/api/yummly2/ 
     const options = {
         method: 'GET',
         url: 'https://yummly2.p.rapidapi.com/feeds/list',
