@@ -47,11 +47,11 @@ router.get('/populate', (req,res) => {
     //https://rapidapi.com/apidojo/api/yummly2/ 
     const options = {
         method: 'GET',
-        url: 'https://yummly2.p.rapidapi.com/feeds/list',
+        url: apiUrl,
         params: {limit: '24', start: '0'},
         headers: {
-          'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
-          'X-RapidAPI-Key': 'c6033753cfmsh7b8d0b8ce2f702cp17feaajsn8d2efb4d4847'
+          'X-RapidAPI-Host': apiHost,
+          'X-RapidAPI-Key': apiKey
         }
       };
       //looping through list to create recipe feed
