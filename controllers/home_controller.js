@@ -19,9 +19,6 @@ router.get('/', async (req, res, next) => {
         const response = await axios.request(options)
         const recipes = response.data.feed
         const context = { posts, recipes }
-        console.log(posts);
-        console.log('this will never work')
-        console.log(recipes)
         return res.render('index.ejs', context);
     } catch (error) {
         console.log(error);
