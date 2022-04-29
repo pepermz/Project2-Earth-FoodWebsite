@@ -1,0 +1,54 @@
+<!-- Recipe display page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodapp - Recipes</title>
+    <%- include('partials/head.ejs', "Home" )%>
+    <%- include('partials/nav.ejs', "Home" )%>
+</head>
+<body>
+    <div id="recipe-image">
+        <a href="<%=onPost.source%>">
+            <img src="<%=onePost.image%>" alt="<%=onePost.name%>" width="width" height="height">
+        </a>
+    </div>
+    <h2 id="recipe-header">
+        <%=onePost.name%>
+    </h2>
+    <p id="recipe-description">
+        <%=onePost.description%>
+    </p>
+    <section id="create-comment">
+        <form method="POST" action="/comments">
+           <fieldset id="comment-form">
+               <legend>Create comment</legend>
+               <label for="rating">Recipe rating (1-10)</label>
+               <input name="rating" type="number" placeholder="1 - 10">
+               <label for="comment">Add comment:</label>
+               <input name="content" type="text" placeholder="Type to add comment">
+               <input name="hidden" name="product" value="<%=onePost._id%>"/>
+               <input type="submit" value="Add comment">
+           </fieldset>
+        </form>
+        <%for(let i = 0; i < comments.length; i++); {%>
+            <div id="comments-display">
+                <h3>Rating: <%=comments[i].rating%></h3>
+                <p><%=comments[i].content%></p>
+                <form action="/comments/<%=comments[i]._id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="delete comment" />                
+            </div>
+        <%}%>
+    </section>
+    <div id="edit-button">
+        <a href="/home/<%=onePost._id%>/edit">Edit Recipe<%=onePost.name%></a>
+    </div>
+    <div>
+        <form method="POST" action="/home/<%=post._id %>?_method=DELETE"> 
+            <input type="submit" class="btn-danger" value="Delete Recipe"/>
+        </form>
+    </div>
+</body>
+</html>
