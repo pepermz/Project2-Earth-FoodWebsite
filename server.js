@@ -41,7 +41,9 @@ app.use('/comments', controllers.comments)
 app.use('/', controllers.auth)
 
 
-app.get('/', (request, response) => response.send('Welcome to Foodapp'))
+app.get('/', (req, res) => {
+    res.render('homepage.ejs')
+})
 
 const db = require('./models')
 

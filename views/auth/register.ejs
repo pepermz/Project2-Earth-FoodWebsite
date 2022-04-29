@@ -5,11 +5,10 @@
   <body class="has-navbar-fixed-right">
     <%- include('../partials/nav.ejs') %>
 
-    <section class="hero is-fullheight-with-navbar is-link">
-      <div class="hero-body is-flex-direction-column">
+
         <h1 class="title">Register</h1>
         <form action="/register" method="POST" class="box">
-          <div class="field">
+          <div>
             <label class="label">Username</label>
             <div class="control">
               <input
@@ -20,7 +19,7 @@
               />
             </div>
           </div>
-          <div class="field">
+          <div>
             <label class="label">Email</label>
             <div class="control">
               <input
@@ -31,7 +30,7 @@
               />
             </div>
           </div>
-          <div class="field">
+          <div>
             <label class="label">Password</label>
             <div class="control">
               <input
@@ -42,14 +41,12 @@
               />
             </div>
           </div>
-          <div class="field">
+          <div>
             <div class="control">
-              <button class="button is-link is-fullwidth">Submit</button>
+              <button>Submit</button>
             </div>
           </div>
         </form>
-      </div>
-    </section>
-    <main class="container is-max-widescreen"></main>
+        <a href="/">Back</a>
   </body>
 </html>
