@@ -10,10 +10,13 @@
             <div>
                 <% for(let idx=0; idx < posts.length; idx++){ %>
                     <% const post=posts[idx] %>
-                    <div class="card" style="width: 15rem;">
+                    <div class="grid-container">
+                        <div class=""
+                    <div class="card" style="width: 15rem;"> 
+                        <div class="grid-item grid-item-1">
                         <img src="<%= post.image %>" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <p class="card-text"><%= post.description %></p>
+                        </div>
                           <a href="/home/<%= post._id %>"><%= post.name %></a>
                           <form method="POST" action="/home/<%=post._id %>?_method=DELETE">            <!-- "/products/0?_method=DELETE" -->
                             <input type="submit" class=" btn-danger" value="Delete Product"/>
@@ -21,9 +24,11 @@
                         </div>
                       </div>
                 <% } %>
+                </div>
             </div>
+          </div>
         </div>
-      
+    </div>
     </main>
 </body>
 </html>
