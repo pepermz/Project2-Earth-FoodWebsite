@@ -11,10 +11,11 @@ router.get('/login', (req,res) => {
 })
 
 
-// LOGIN ROUTE
+// LOGIN ROUTE 
 router.post('/login', async function(req,res) {
     try {
         const userFound = await User.findOne({ email: req.body.email })
+        console.log(userFound)
         if(!userFound) return res.send('The password or the username is invalid try again')
         const match = await bcrypt.compare(req.body.password, userFound.password)
         if (!match) return res.send("The password or the username is invalid try again")
@@ -29,6 +30,7 @@ router.post('/login', async function(req,res) {
         res.send(err)
     }
 })
+
 
 // RESGISTER ROUTE
 
