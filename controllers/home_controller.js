@@ -29,7 +29,7 @@ router.get('/', async (req, res, next) => {
 
 // localhost:4000/home/new    
 router.get('/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('/pages/new.ejs')
 })
 //route to populate cards
 router.get('/populate', (req,res) => {
@@ -100,7 +100,7 @@ router.get('/:id/edit', async (req,res, next)=>{
         const context = {
             post: updatedPost
         }
-        return res.render('edit.ejs', context)
+        return res.render('pages/edit.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;

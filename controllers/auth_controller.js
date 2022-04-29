@@ -7,7 +7,7 @@ const { modelName } = require('../models/Comment');
 const { redirect } = require('express/lib/response');
 
 router.get('/login', (req,res) => {
-    res.render('auth/login.ejs')
+    res.render('pages/login.ejs')
 })
 
 
@@ -35,7 +35,7 @@ router.post('/login', async function(req,res) {
 // RESGISTER ROUTE
 
 router.get('/register', (req,res) => {
-    res.render('auth/register.ejs')
+    res.render('pages/register.ejs')
 })
 
 router.post('/register', async (req,res,next) =>{
