@@ -1,3 +1,22 @@
 body {
-    background-color: blue;
+    background-color: #AABDA1;
+}
+
+.card {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.wrapper {
+    display:grid;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.wrapper > div {
+    background: #eee;
+    padding: 1em;
+}
+
+.wrapper > div:nth-child(odd) {
+    background: #ddd;
 }
