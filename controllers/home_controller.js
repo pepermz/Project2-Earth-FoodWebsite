@@ -2,13 +2,14 @@ const { default: axios } = require('axios');
 const express = require('express')
 const router = express.Router()
 const db = require('../models')
+require('dotenv').config()
 const options = {
     method: 'GET',
-    url: 'https://yummly2.p.rapidapi.com/feeds/list',
+    url: process.env.apiUrl,
     params: {limit: '24', start: '0'},
     headers: {
-      'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
-      'X-RapidAPI-Key': 'c6033753cfmsh7b8d0b8ce2f702cp17feaajsn8d2efb4d4847'
+      'X-RapidAPI-Host':process.env.apiHost,
+      'X-RapidAPI-Key':process.env.apiKey,
     }
   };
 
@@ -16,6 +17,7 @@ const options = {
 router.get('/', async (req, res, next) => {
     try {
         const posts = await db.Post.find({});
+        console.log(options)
         const response = await axios.request(options)
         const recipes = response.data.feed
         const context = { posts, recipes }
@@ -44,11 +46,11 @@ router.get('/populate', (req,res) => {
     //https://rapidapi.com/apidojo/api/yummly2/ 
     const options = {
         method: 'GET',
-        url: apiUrl,
+        url:process.env.apiUrl,
         params: {limit: '24', start: '0'},
         headers: {
-          'X-RapidAPI-Host': apiHost,
-          'X-RapidAPI-Key': apiKey
+          'X-RapidAPI-Host':process.env.apiHost,
+          'X-RapidAPI-Key':process.env.apiKey
         }
       };
       //looping through list to create recipe feed
