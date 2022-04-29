@@ -1,0 +1,15 @@
+<!-- Recipe Card -->
+<a href="/home/<%= post._id %>">
+    <%for(let idx = 0); idx < posts.length; indx++) {%>
+        <%const post = posts[idx]%>
+        <div class="card" style="width: 18rem;">
+            <img src="<%= post.image %>" class="card-img-top" alt="<%=post.name%>">
+            <div class="card-body">
+                <p class="card-text">
+                  <strong><%= post.name%></strong><br>
+                  <%= post.description %>
+                </p>
+            </div>
+        </div>
+    <%}%>
+</a>
