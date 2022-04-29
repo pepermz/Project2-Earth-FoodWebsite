@@ -1,15 +1,20 @@
 body {
     background-color: #AABDA1;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
-.card {
-    flex-wrap: wrap;
-    display: flex;
+a {
+    text-decoration: none;
 }
+
+
 
 .wrapper {
     display:grid;
     grid-template-columns: 30% 30% 30%;
+    gap: 20px;
 }
 
 .wrapper > div {
@@ -19,4 +24,21 @@ body {
 
 .wrapper > div:nth-child(odd) {
     background: #ddd;
+}
+
+.input {
+    max-width: 500px;
+}
+
+.card-image-top {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
 }
