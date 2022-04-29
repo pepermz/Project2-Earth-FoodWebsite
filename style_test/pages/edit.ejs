@@ -1,0 +1,24 @@
+<!-- Edit Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodapp - Edit Recipe</title>
+    <%- include('partials/head.ejs', "Home" )%>
+</head>
+<body>
+    <h1>Edit <%=post.name%></h1>
+    <form method="POST" action="/home/<%= post._id %>?_method=PUT">
+        <fieldset>
+            <label for="name"> Recipe Name: </label>
+            <input type="text" name="name" value="<%= post.name%>"/>
+            <label for="description"> Recipe Description: </label>
+            <input type="text" name="description" value="<%= post.description%>"/>
+            <label for="image"> Recipe Image (URL): </label>
+            <input type="text" name="image" value="<%= post.image%>"/>
+            <input type="submit" value="Edit Product: <%= post.name%>"/>
+    </form>
+</body>
+</html>
