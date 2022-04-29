@@ -13,6 +13,10 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: [true, 'image cannot be empty']
     },
+    postLike: {
+        type: Number,
+        default: 0
+    },
     source: {
         type: String,
         default: 'http://localhost:4000/home'   
