@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs', "Home" )%>
+    <%- include('partials/nav.ejs', "Home" )%>
+<body id="new-post-body">
+    <h1 id="new-post-header">New Product</h1>
+    <form id="new-post-form" method="POST" action="/home">
+        <fieldset>
+            <label for="name"> Recipe Name: </label>
+            <input id="name" name="name" type="text" placeholder="Recipe Name">
+            <label for="description"> Recipe Description: </label>
+            <input id="description" name="description" type="text" placeholder="Recipe Description">
+            <label for="image"> Recipe Image (URL): </label>
+            <input id="image" name="image" type="text" placeholder="Place Image URL Here">
+            <input type="submit" value="Create New Recipe">
+    </form>
+</body>
+</html>
