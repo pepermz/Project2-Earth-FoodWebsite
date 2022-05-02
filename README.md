@@ -38,6 +38,8 @@ Users have the opportunity to like, comment, and add their own recipes.
 
 <img width="650" alt="Screen Shot 2022-04-26 at 11 13 02 AM" src="https://user-images.githubusercontent.com/101522627/165345489-9ddcc246-bd43-40e0-b525-e3445e2c55d2.png">
 
+![Screen Shot 2022-04-27 at 3 47 14 PM](https://user-images.githubusercontent.com/101522627/166327592-4b3077f5-51d2-4517-a789-a52fc1b1c866.png)
+
 
 
 
@@ -53,6 +55,8 @@ Users have the opportunity to like, comment, and add their own recipes.
 
 
 ### Installation
+* Heroku link: [https://secret-escarpment-10244.herokuapp.com/home](https://secret-escarpment-10244.herokuapp.com/home)
+* Project Link: [https://github.com/pepermz/Project2-Earth-FoodWebsite.git](https://github.com/pepermz/Project2-Earth-FoodWebsite.git)
 
 Below are instructions on installing and setting up our app. 
 1. Install NPM packages
@@ -70,8 +74,6 @@ Below are instructions on installing and setting up our app.
 * Ryan Hirsch - https://github.com/ryan-hirsch
 * D'Arrian McClendon  - https://github.com/dmcclendon56
 
-
-Project Link: [https://github.com/pepermz/Project2-Earth-FoodWebsite.git](https://github.com/pepermz/Project2-Earth-FoodWebsite.git)
 
 
 
