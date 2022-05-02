@@ -1,10 +1,26 @@
-a {
-    text-decoration: none;
-    color: black;
-}
 
 .card {
     flex-wrap: wrap;
     display: flex;
 }
 
+.welcome-page {
+    text-align: center;
+    font-size: x-large;
+    padding-top: 9em;
+    background: rgb(125,217,218);
+    background: -moz-radial-gradient(circle, rgba(125,217,218,1) 0%, rgba(255,151,29,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(125,217,218,1) 0%, rgba(255,151,29,1) 100%);
+    background: radial-gradient(circle, rgba(125,217,218,1) 0%, rgba(255,151,29,1) 100%);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}   
+
+.login {
+    color: black;
+    font-size:large
+}
+
+.register {
+    color: black;
+    font-size:large
+}
