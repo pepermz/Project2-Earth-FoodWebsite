@@ -63,7 +63,7 @@ Below are instructions on installing and setting up our app.
 
 <!-- LICENSE -->
 ## License
-
+"license": "ISC",
 <!-- CONTACT -->
 ## Contact
 * Jose Ramirez - https://github.com/pepermz
@@ -82,3 +82,5 @@ Project Link: [https://github.com/pepermz/Project2-Earth-FoodWebsite.git](https:
 
 <!-- STRETCH GOALS -->
 ## Stretch Goals
+* Add 'Like' system
+* 
