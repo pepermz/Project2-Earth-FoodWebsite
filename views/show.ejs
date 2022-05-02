@@ -5,7 +5,7 @@
     <%- include('partials/nav.ejs', "Home" )%>
     <h1>Show Page</h1>
     <!-- product object referenced by oneProduct -->
-    <div class="showcard" style="text-align: center; margin-top: 20px;">
+    <div class="showcard">
         <h2><%= onePost.name %></h2>
         <img class="show-image" src="<%=onePost.image%>" alt="<%=onePost.name %>"/></br>
         <a href="<%=onePost.source%>">Click here for recipe</a>
@@ -17,7 +17,7 @@
             <h3>Add a Comment:</h3>
             <!-- form here -->
             <form method="POST" action="/comments">
-                <input name="rating" type="number" placeholder="Rate"/>
+                <input name="rating" type="number" placeholder="Rate 1-10"/>
                 <input name="content" type="text" placeholder="Add Comment" />
                 <input type="hidden" name="product" value="<%=onePost._id%>"/>
                 <input type="submit" value="Share your thoughts..."/>
