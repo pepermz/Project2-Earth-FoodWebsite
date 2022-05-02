@@ -18,16 +18,19 @@
       </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#Things to Improve">Improvement Goals</a></li>
+    <li><a href="#Stretch Goals">Stetch Goals</a></li>
   </ol>
 </details>
 
+![project2art](https://user-images.githubusercontent.com/101522627/166264987-b683c348-4e2e-4d16-ab4a-711c8fcc21be.jpg)
+
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Chow-Town is a user friendly application providing the best recipes, restuarants, and user post. 
-Users have the opportunity to like, comment, and add their own BBQ recipes.  
+Chow-Town is a user friendly application providing the best recipes, and user collaborations. 
+Users have the opportunity to like, comment, and add their own recipes.  
 
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
@@ -74,5 +77,8 @@ Project Link: [https://github.com/pepermz/Project2-Earth-FoodWebsite.git](https:
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- THINGS TO IMPROVE -->
+## Improvements
+
+<!-- STRETCH GOALS -->
+## Stretch Goals
