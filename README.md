@@ -26,7 +26,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-FoodApp is a user friendly application providing the best BBQ recipes, restuarants, and user post. 
+Chow-Town is a user friendly application providing the best recipes, restuarants, and user post. 
 Users have the opportunity to like, comment, and add their own BBQ recipes.  
 
 
@@ -43,6 +43,10 @@ Users have the opportunity to like, comment, and add their own BBQ recipes.
 * [Bootstrap]
 * [CSS]
 * [JavaScript]
+* [MongoDB]
+* [Express]
+* [Axios]
+* [Heroku]
 
 
 ### Installation
