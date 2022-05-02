@@ -5,31 +5,34 @@
     <%- include('partials/nav.ejs', "Home" )%>
     <h1>Show Page</h1>
     <!-- product object referenced by oneProduct -->
-    <h2><%= onePost.name %></h2>
-    <small><%= onePost.description %></small>
-    <img class="show-image" src="<%=onePost.image%>" alt="<%=onePost.name %>"/>
-    <a href="<%=onePost.source%>">Click here for recipe</a>
-    <div>
-        <a href="/home/<%= onePost._id %>/edit">Edit <%= onePost.name %></a>
+    <div class="showcard" style="text-align: center; margin-top: 20px;">
+        <h2><%= onePost.name %></h2>
+        <img class="show-image" src="<%=onePost.image%>" alt="<%=onePost.name %>"/></br>
+        <a href="<%=onePost.source%>">Click here for recipe</a>
+        <div>
+            <a href="/home/<%= onePost._id %>/edit">Edit <%= onePost.name %></a></br>
     </div>
-    <h1>Comment Show</h1>
     <section>
         <div>
-            <h3>Create a Comment:</h3>
+            <h3>Add a Comment:</h3>
             <!-- form here -->
             <form method="POST" action="/comments">
-                <input name="rating" type="number"/>
-                <input name="content" type="text" />
+                <input name="rating" type="number" placeholder="Rate"/>
+                <input name="content" type="text" placeholder="Add Comment" />
                 <input type="hidden" name="product" value="<%=onePost._id%>"/>
                 <input type="submit" value="Share your thoughts..."/>
             </form>
         </div>
         <% for(let i=0;i<comments.length;i++){ %>
-            <div>
-                <h3>Rating: <%=comments[i].rating %></h3>
-                <p><%=comments[i].content %></p>
-                <form action="/comments/<%=comments[i]._id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="delete comment" />
+            <div class="comments">
+                <div class="card w-75" style="margin-left: 15%; margin-top: 20px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Rating: <%=comments[i].rating %></h5>
+                      <p class="card-text"><%=comments[i].content %></p>
+                      <form action="/comments/<%=comments[i]._id%>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-primary" value="delete comment" />
+                    </div>
+                </div>
             </div>
         <%}%>
     </section>

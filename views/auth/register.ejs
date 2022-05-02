@@ -4,9 +4,27 @@
 
   <body class="has-navbar-fixed-right">
     <%- include('../partials/nav.ejs') %>
+    <form action="/register" method="POST" class="form">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Enter Username</label>
+        <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <button onclick="location.href='/'" class="btn btn-primary ml-50%">Back</button>
 
+    <!--bot-->
 
-        <h1 class="title">Register</h1>
+        <!-- <h1 class="title">Register</h1>
         <form action="/register" method="POST" class="box">
           <div>
             <label class="label">Username</label>
@@ -46,7 +64,6 @@
               <button>Submit</button>
             </div>
           </div>
-        </form>
-        <a href="/">Back</a>
+        </form> -->
   </body>
 </html>
