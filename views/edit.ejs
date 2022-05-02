@@ -3,25 +3,24 @@
     <%- include('partials/head.ejs', "Home" )%>
 <body>
     <%- include('partials/nav.ejs', "Home" )%>
-    <h1>Edit Page | <%= post.name%></h1>
-    <div>
-        <form method="POST" action="/home/<%= post._id %>?_method=PUT">
-            <div>
-                <label>Product name</label>
-                <input type="text" name="name" value="<%= post.name%>"/>
-            </div>
-            <div>
-                <label>Description</label>
-                <input type="text" name="description" value="<%= post.description%>"/>
-            </div>
-            <div>
-                <label>Product image</label>
-                <input type="text" name="image" value="<%= post.image%>"/>
-            </div>
-            <div>
-                <input type="submit" value="Edit Product: <%= post.name%>"/>
-            </div>
+    <h1 class="edith1">Edit Page | <%= post.name%></h1>
+    <div class="form-div">
+        <form action="/home/<%= post._id %>?_method=PUT" method="POST" class="form"> 
+          <div class="mb-3">
+            <label class="form-label">Product Name:</label>
+            <input name="name" type="text"class="form-control"   value="<%= post.name%>" id="name" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Product Description:</label>
+            <input name="description" id="description" type="text" value="<%= post.description%>" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Product Image:</label>
+            <input name="image" id="image" value="<%= post.image%>" type="text" class="form-control">
+          </div>
+          <button type="submit" value="Edit Product: <%= post.name%>" class="btn btn-primary">Edit Product: <%= post.name%></button>
         </form>
-    </div>
+      </div>
+    <!---->
 </body>
 </html>

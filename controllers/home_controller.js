@@ -20,7 +20,7 @@ router.get('/', async (req, res, next) => {
         console.log(options)
         const response = await axios.request(options)
         const recipes = response.data.feed
-        const context = { posts, recipes }
+        const context = { posts, recipes:[] }
         return res.render('index.ejs', context);
     } catch (error) {
         console.log(error);

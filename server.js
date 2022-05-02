@@ -4,8 +4,7 @@ const controllers = require('./controllers')
 //session
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
-
-
+const navLinks = require('./navLinks')
 const app = express();
 const PORT = 4000;
 const axios = require("axios");
@@ -34,6 +33,14 @@ app.use(
     })
 )
 
+app.use(navLinks)
+
+app.use(function (req, res, next) {
+    res.locals.user = req.session.currentUser;
+    console.log(res.locals);
+    console.log(`Current user is ${res.locals.user}`)
+    next();
+});
 
 // CONTROLLERS
 app.use('/home', controllers.posts)
