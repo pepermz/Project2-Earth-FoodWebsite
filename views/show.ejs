@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('partials/head.ejs', "Home" )%>
-<body>
     <%- include('partials/nav.ejs', "Home" )%>
-    <h1>Show Page</h1>
+<body>
     <!-- product object referenced by oneProduct -->
+    <br>
+    <br>
+    <br>
     <h2><%= onePost.name %></h2>
-    <small><%= onePost.description %></small>
-    <img class="show-image" src="<%=onePost.image%>" alt="<%=onePost.name %>"/>
-    <a href="<%=onePost.source%>">Click here for recipe</a>
+    <small><%= onePost.description %></small><br>
+    <img class="show-image" src="<%=onePost.image%>" alt="<%=onePost.name %>"/><br>
+    <a href="<%=onePost.source%>">Click here for recipe</a><br>
     <div>
         <a href="/home/<%= onePost._id %>/edit">Edit <%= onePost.name %></a>
     </div>
-    <h1>Comment Show</h1>
+    <h3>Comment Show</h3>
     <section>
         <div>
-            <h3>Create a Comment:</h3>
+            <h5>Create a Comment:</h5>
             <!-- form here -->
             <form method="POST" action="/comments">
                 <input name="rating" type="number"/>

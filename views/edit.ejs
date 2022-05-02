@@ -4,7 +4,7 @@
 <body>
     <%- include('partials/nav.ejs', "Home" )%>
     <h1>Edit Page | <%= post.name%></h1>
-    <div>
+    <legend>
         <form method="POST" action="/home/<%= post._id %>?_method=PUT">
             <div>
                 <label>Product name</label>
@@ -22,6 +22,6 @@
                 <input type="submit" value="Edit Product: <%= post.name%>"/>
             </div>
         </form>
-    </div>
+    </legend>
 </body>
 </html>
