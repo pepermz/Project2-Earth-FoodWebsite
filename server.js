@@ -9,6 +9,7 @@ const app = express();
 const PORT = 4000;
 const axios = require("axios");
 
+
 //DB Connection
 require('./config/db.connection')
 
@@ -58,7 +59,7 @@ const db = require('./models')
 
 // PORT
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Listening on ${PORT}`)
 })
 
