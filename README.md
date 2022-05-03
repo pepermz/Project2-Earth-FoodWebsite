@@ -19,7 +19,7 @@
     </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#Things to Improve">Improvement Goals</a></li>
+    <li><a href="#Code Snippit">Code</a></li>
     <li><a href="#Stretch Goals">Stetch Goals</a></li>
   </ol>
 </details>
@@ -63,13 +63,16 @@ Below are instructions on installing and setting up our app.
    ```
    npm install
    ```
+   ```
+   node server.js
+   ```
 
 
 <!-- LICENSE -->
-## License
+### License
 "license": "ISC",
 <!-- CONTACT -->
-## Contact
+### Contact
 * Jose Ramirez - https://github.com/pepermz
 * Ryan Hirsch - https://github.com/ryan-hirsch
 * D'Arrian McClendon  - https://github.com/dmcclendon56
@@ -79,10 +82,15 @@ Below are instructions on installing and setting up our app.
 
 
 
-<!-- THINGS TO IMPROVE -->
-## Improvements
-
+<!-- CODE -->
+### Code
+  ```
+if (typeof recipe.display.displayName !== 'undefined'){
+                //body = defined by post.js/schema
+            const body = { name: recipe.display.displayName, description: recipe.display.displayName, image: recipe.display.images[0], source}
+            db.Post.create(body);
+            }
+  ```
 <!-- STRETCH GOALS -->
-## Stretch Goals
+### Stretch Goals
 * Add 'Like' system
-* 
