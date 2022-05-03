@@ -36,8 +36,9 @@ Users have the opportunity to like, comment, and add their own recipes.
 <img width="650" alt="Screen Shot 2022-04-26 at 11 13 02 AM" src="https://user-images.githubusercontent.com/101522627/165345489-9ddcc246-bd43-40e0-b525-e3445e2c55d2.png">
 
 #### FINAL SHOW-PAGE
+![Screen Shot 2022-05-03 at 8 45 23 AM](https://user-images.githubusercontent.com/101522627/166464700-44dc22a5-ae83-46ad-af35-47e86ba1d6b1.png)
 
-![Screen Shot 2022-05-03 at 8 36 45 AM](https://user-images.githubusercontent.com/101522627/166463112-95dcf5f6-b90b-4f9c-82fa-05743233bf2e.png)
+
 
 
 
@@ -89,11 +90,17 @@ Below are instructions on installing and setting up our app.
 <!-- CODE -->
 ### Code
   ```
+  //Code Snippets from RapidAPI
+  axios.request(options).then(function (response)
+  //grabbing display name and image
 if (typeof recipe.display.displayName !== 'undefined'){
                 //body = defined by post.js/schema
             const body = { name: recipe.display.displayName, description: recipe.display.displayName, image: recipe.display.images[0], source}
             db.Post.create(body);
             }
+  ```
+  ```
+  <a href="/home/<%= onePost._id %>/edit">Edit <%= onePost.name %></a></br>
   ```
 <!-- STRETCH GOALS -->
 ### Stretch Goals
