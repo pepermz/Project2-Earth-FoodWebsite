@@ -31,6 +31,7 @@
 ## About The Project
 Chow-Town is a user friendly application providing the best recipes, and user collaborations. 
 Users have the opportunity to like, comment, and add their own recipes.  
+https://foodgawker.com/
 
 #### PROTOTYPE
 <img width="650" alt="Screen Shot 2022-04-26 at 11 13 02 AM" src="https://user-images.githubusercontent.com/101522627/165345489-9ddcc246-bd43-40e0-b525-e3445e2c55d2.png">
