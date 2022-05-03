@@ -88,7 +88,7 @@ Below are instructions on installing and setting up our app.
 
 
 <!-- CODE -->
-### Code
+### Code Snippets
   ```
   //Code Snippets from RapidAPI
   axios.request(options).then(function (response)
